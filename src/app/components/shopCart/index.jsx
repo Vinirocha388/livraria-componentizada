@@ -1,13 +1,14 @@
 import styles from './shop.module.css';
 
-const newReleases = [
+const ShopCart = () => {
+  const newReleases = [
     {
       id: 5,
       title: "A Linguagem Secreta",
       author: "Carla Prado",
       price: 42.9,
       coverImage:
-        "https://via.placeholder.com/150x200/9b59b6/ffffff?text=Linguagem",
+        "https://m.media-amazon.com/images/I/81ov3qJM9gL._AC_UL320_.jpg",
       rating: 4.0,
       tags: ["Suspense", "Linguística"],
     },
@@ -17,7 +18,7 @@ const newReleases = [
       author: "Pedro Almeida",
       price: 59.9,
       coverImage:
-        "https://via.placeholder.com/150x200/1abc9c/ffffff?text=Revolução",
+        "https://m.media-amazon.com/images/I/71cPjCJdjgL._AC_UL320_.jpg",
       rating: 4.6,
       tags: ["Não-Ficção", "Tecnologia"],
     },
@@ -27,56 +28,96 @@ const newReleases = [
       author: "Sofia Torres",
       price: 37.9,
       coverImage:
-        "https://via.placeholder.com/150x200/d35400/ffffff?text=Fronteiras",
+        "https://m.media-amazon.com/images/I/811Bv13Wg5L._AC_UL320_.jpg",
       rating: 4.3,
       tags: ["Filosofia", "Psicologia"],
     },
   ];
 
-const ShopCart = () => {
-    return(
-        <div className={styles.shoppingCart}>
-        <div className={styles.cartHeader}>
-          <h3 className={styles.cartHeaderTitle}>Seu Carrinho</h3>
-          <button className={styles.closeButton}>✕</button>
-        </div>
+  const renderStars = (rating) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
 
-        <div className={styles.cartItems}>
-          {cartItems.length > 0 ? (
-            cartItems.map((item) => (
-              <div key={item.id} className={styles.cartItem}>
-                <div className={styles.itemInfo}>
-                  <h4 className={styles.itemTitle}>{item.title}</h4>
-                  <div className={styles.itemDetails}>
-                    <span className={styles.itemQuantity}>
-                      Qtd: {item.quantity}
-                    </span>
-                    <span className={styles.itemPrice}>
-                      R$ {item.price.toFixed(2)}
-                    </span>
-                  </div>
-                </div>
-                <button className={styles.removeButton}>✕</button>
-              </div>
-            ))
-          ) : (
-            <p className={styles.emptyCartMessage}>Seu carrinho está vazio</p>
-          )}
-        </div>
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(
+        <span key={`star-${i}`} className={styles.star}>
+          ★
+        </span>
+      );
+    }
 
-        {cartItems.length > 0 && (
-          <div className={styles.cartFooter}>
-            <div className={styles.cartTotal}>
-              <span className={styles.totalLabel}>Total:</span>
-              <span className={styles.totalValue}>
-                R$ {calculateTotal().toFixed(2)}
-              </span>
-            </div>
-            <button className={styles.checkoutButton}>Finalizar Compra</button>
-          </div>
-        )}
+    if (hasHalfStar) {
+      stars.push(
+        <span key="half-star" className={styles.starHalf}>
+          ★
+        </span>
+      );
+    }
+
+    const emptyStars = 5 - stars.length;
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(
+        <span key={`empty-star-${i}`} className={styles.starEmpty}>
+          ☆
+        </span>
+      );
+    }
+
+    return stars;
+
+  };
+
+  return (
+    <section className={`${styles.bookSection} ${styles.newReleases}`}>
+      <div className={styles.sectionHeader}>
+        <h2 className={styles.sectionHeading}>Lançamentos</h2>
+        <a href="/lancamentos" className={styles.viewAll}>
+          Ver todos
+        </a>
       </div>
-    )
+
+      <div className={styles.booksGrid}>
+        {newReleases.map((book) => (
+          <div key={book.id} className={styles.bookCard}>
+            <div className={styles.bookCover}>
+              <img
+                src={book.coverImage}
+                alt={book.title}
+                className={styles.coverImage}
+              />
+              <button className={styles.quickViewButton}>Visualizar</button>
+            </div>
+            <div className={styles.bookInfo}>
+              <span className={styles.newBadge}>Novo</span>
+              <h3 className={styles.bookTitle}>{book.title}</h3>
+              <p className={styles.bookAuthor}>por {book.author}</p>
+              <div className={styles.bookRating}>
+                {renderStars(book.rating)}
+                <span className={styles.ratingValue}>({book.rating})</span>
+              </div>
+              <div className={styles.bookTags}>
+                {book.tags.map((tag, index) => (
+                  <span key={index} className={styles.tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className={styles.bookPriceActions}>
+                <span className={styles.bookPrice}>
+                  R$ {book.price.toFixed(2)}
+                </span>
+                <div className={styles.bookActions}>
+                  <button className={styles.iconButton}>❤️</button>
+                  <button className={styles.iconButton}>🛒</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
 }
 
 export default ShopCart;
