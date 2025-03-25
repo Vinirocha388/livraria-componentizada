@@ -8,7 +8,7 @@ const ShopCart = () => {
       author: "Carla Prado",
       price: 42.9,
       coverImage:
-        "https://m.media-amazon.com/images/I/81ov3qJM9gL._AC_UL320_.jpg",
+        "https://m.media-amazon.com/images/I/81DqwHZsDTL.jpg",
       rating: 4.0,
       tags: ["Suspense", "Linguística"],
     },
@@ -18,7 +18,7 @@ const ShopCart = () => {
       author: "Pedro Almeida",
       price: 59.9,
       coverImage:
-        "https://m.media-amazon.com/images/I/71cPjCJdjgL._AC_UL320_.jpg",
+        "https://m.media-amazon.com/images/I/81U-TO4QrCL._AC_UF1000,1000_QL80_.jpg",
       rating: 4.6,
       tags: ["Não-Ficção", "Tecnologia"],
     },
