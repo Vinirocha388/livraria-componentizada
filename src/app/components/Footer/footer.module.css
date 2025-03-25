@@ -1,0 +1,154 @@
+:root {
+    --primary-color: #26c485; /* Verde-água/turquesa como na roupa do Tanjiro */
+    --primary-light: #5edda9;
+    --primary-dark: #0f9965;
+    --secondary-color: #ff5978; /* Rosa como o uniforme da Nezuko */
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --light-text: #757575;
+    --white: #ffffff;
+    --black: #202020; /* Para detalhes escuros como no uniforme dos Hashira */
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --error-color: #cf6679;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 8px;
+  }
+  
+/* FOOTER STYLES */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 3rem 2rem 1rem;
+    margin-top: auto;
+    box-sizing: border-box;
+  }
+  
+  .footerContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footerColumn {
+    box-sizing: border-box;
+  }
+  
+  .footerColumnHeading {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-family: inherit;
+  }
+  
+  .footerLogo {
+    margin-bottom: 1rem;
+  }
+  
+  .footerLogoTitle {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+  }
+  
+  .footerLogoSlogan {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+  
+  .footerDescription {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    max-width: 300px;
+  }
+  
+  .footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footerLinkItem {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footerLink {
+    opacity: 0.7;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footerLink:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+  }
+  
+  .socialLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .socialLink {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .socialLink:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+  }
+  
+  .footerBottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+  }
+  
+  .footerPolicies {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .policyLink {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .policyLink:hover {
+    opacity: 1;
+  }

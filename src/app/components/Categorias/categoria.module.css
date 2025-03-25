@@ -1,0 +1,67 @@
+:root {
+  --primary-color: #26c485; /* Verde-água/turquesa como na roupa do Tanjiro */
+  --primary-light: #5edda9;
+  --primary-dark: #0f9965;
+  --secondary-color: #ff5978; /* Rosa como o uniforme da Nezuko */
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --light-text: #757575;
+  --white: #ffffff;
+  --black: #202020; /* Para detalhes escuros como no uniforme dos Hashira */
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --error-color: #cf6679;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+}
+
+
+/* CATEGORIES SECTION STYLES */
+.categoriesSection {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    box-sizing: border-box;
+  }
+  
+  .categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .categoryCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--gray-100);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease forwards;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+  }
+  
+  .categoryCard:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-5px);
+  }
+  
+  .categoryIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryName {
+    font-weight: 500;
+    text-align: center;
+  }

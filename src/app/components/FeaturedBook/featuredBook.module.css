@@ -1,0 +1,261 @@
+:root {
+  --primary-color: #26c485; /* Verde-água/turquesa como na roupa do Tanjiro */
+  --primary-light: #5edda9;
+  --primary-dark: #0f9965;
+  --secondary-color: #ff5978; /* Rosa como o uniforme da Nezuko */
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --light-text: #757575;
+  --white: #ffffff;
+  --black: #202020; /* Para detalhes escuros como no uniforme dos Hashira */
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --error-color: #cf6679;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+}
+
+
+
+/* BOOK SECTION STYLES */
+.bookSection {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionHeading {
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    margin: 0;
+    font-family: inherit;
+  }
+  
+  .viewAll {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+  }
+  
+  .viewAll:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+  
+  .booksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .bookCard {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease forwards;
+    box-sizing: border-box;
+  }
+  
+  .bookCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bookCover {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--gray-100);
+  }
+  
+  .coverImage {
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  
+  .bookCard:hover .coverImage {
+    transform: scale(1.05);
+  }
+  
+  .quickViewButton {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    padding: 0.5rem;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+  
+  .bookCard:hover .quickViewButton {
+    bottom: 0;
+  }
+  
+  .bookInfo {
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .newBadge {
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    background-color: var(--success-color);
+    color: var(--white);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .bookTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    font-family: inherit;
+  }
+  
+  .bookAuthor {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bookRating {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    color: #ffc107;
+    font-size: 1rem;
+  }
+  
+  .starEmpty {
+    color: var(--gray-300);
+  }
+  
+  .starHalf {
+    position: relative;
+    color: var(--gray-300);
+  }
+  
+  .starHalf::after {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffc107;
+    width: 50%;
+    overflow: hidden;
+  }
+  
+  .ratingValue {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--light-text);
+  }
+  
+  .bookTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tag {
+    background-color: var(--gray-200);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    color: var(--light-text);
+  }
+  
+  .bookPriceActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bookPrice {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+  }
+  
+  .bookActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* CATEGORIES SECTION STYLES */
+  .categoriesSection {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    box-sizing: border-box;
+  }
+  
+  .categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .categoryCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--gray-100);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease forwards;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+  }
+  
+  .categoryCard:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-5px);
+  }
+  
+  .categoryIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryName {
+    font-weight: 500;
+    text-align: center;
+  }
