@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroBanner from "./components/HeroBanner";
 import Newsletter from "./components/newsletter";
+import ShopCart from "./components/shopCart";
 import styles from "./page.module.css";
 
 
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroBanner />
       <FeaturedBook />
       <Categorias />
+      <ShopCart />
       <Newsletter />
       <Footer />
     </div>
